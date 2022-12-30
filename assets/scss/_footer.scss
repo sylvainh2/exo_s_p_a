@@ -1,0 +1,85 @@
+// on crée le fond en bleu ciel
+.firstHeadFoot{
+    width:100%;
+    background-color:$bleuciel ;
+    padding-bottom:3rem;
+}
+
+//on crée le fond blanc que l'on remonte légèrement sous l'image
+.headfoot{
+    margin:-1.5%;
+    background-color: $blanc;
+    height:10rem;    
+}
+
+//on crée le fond en bleu marine qui sera le parent référence pour venir placer le logo en décallé dessus
+.foot{
+    position:relative;
+    background: $marine;
+    color: $blanc;
+    width:100%;
+    @media screen and (max-width:768px){padding-top: 3rem};
+    @media screen and (min-width:768px){padding-top: 10%};
+    padding-bottom:2rem;
+
+    //on met le containaire en flex colonne pour écrire les infos les unes sous les autres 
+    .footLegal{
+        display:flex;
+        flex-direction: column;
+        
+        //sur le premier containaire on aligne le text à gauche 
+        &:first-child>.btn{
+            
+            text-align: left;
+            text-decoration: none;
+            color:$blanc;
+            font-size: 1rem;
+            font-weight: 500;
+            //en responsive on centre (de façon alignée en metant une marge gauche) les textes
+            @media screen and (max-width: 768px){
+                padding-left: 32%;
+            };
+        }
+
+        //sur le deuxième containaire on va centrer les textes
+        &:nth-child(2){
+            text-align: center;
+            font-weight: 600;
+        }
+        //on crée les flêches de lien du premier containaire 
+        span{
+            color:$rouge;
+            background-color: $blanc;
+            padding:0.3rem 0.6rem;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            }
+    }
+
+    //on place les boutons d'accès aux réseaux sociaux par rapport au bord droit
+    .contReseau{
+        display:flex;
+        justify-content: right;
+
+        //on met les icones des reseaux en rouge et on les espace
+        .reseaux{
+            font-size: 2.5rem;
+            color:$rouge;
+            margin-right:2rem;
+        }
+    }
+
+    //on place le logo en absolute du containaire bleu marine pour le placer de façon centrée et à cheval 
+    .logo{
+        position:absolute;
+        background-color: $blanc;
+        top:-5%;
+        left:50%;
+        transform: translate(-50%,0);
+        width:30%;
+        @media screen and (max-width:768px) {
+            width:60%;
+        }
+        box-shadow: 0 -2px 4px $grisc;
+    }
+}

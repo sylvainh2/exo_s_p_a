@@ -1,0 +1,54 @@
+.iconeCont{
+    
+    padding-bottom: 6rem;
+
+    .icone{
+        display: flex;
+        flex-direction: column;
+        @media screen and (max-width: 768px) {
+            margin-bottom: 2rem;
+        }
+
+        .iconebtn{
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+            color: $noir;
+            
+            @media screen and (min-width:768px){
+            &::after{
+                content:"";
+                display:block;
+                width:0%;
+                height:1px;
+                background-color: $rouge;
+                margin: 0 auto;
+                transition: width 0.2s ease-in ;
+            }}
+        }
+
+        &:hover {
+            .iconebtn::after {
+                width:15%;
+            }
+        }
+        .adopt{
+            margin:0 auto 1rem;
+            width:10rem;
+        }
+    
+        .trouv{
+            margin:0 auto 1rem;
+            width:10rem;
+        }
+    
+        .don{
+            margin:0 auto 1rem;
+            width:10rem;
+        }
+    }
+    
+    
+}

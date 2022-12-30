@@ -1,0 +1,97 @@
+//on crée le fond bleu ciel et on le positionne avec le chevauchement
+.carrou{
+    background-color: $bleuciel;
+    padding-top: 3rem;
+    margin-bottom: -0.5rem;
+
+    //on place le titre et on le centre
+    .containCarrou{
+
+        padding: 0rem 0 4rem;
+        position: relative;
+        height: 100%;
+
+        h2{
+            text-align: center;
+            font-size: 1.5rem;
+            text-transform: uppercase;            
+        }
+
+        &::after{
+            content:"";
+            display:block;
+            width:10%;
+            height:2px;
+            background-color: $rouge;
+            margin:0 auto;
+        }
+    }
+   
+}
+
+.containCarrou {
+  background: $bleuciel;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color:$noir;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background:$blanc;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-slide .infoPet{
+    position:absolute;
+    padding: 1rem 0 3rem;
+    top:37%;
+    @media screen and (min-width:768px){
+      top:85%;
+    }
+    background-color: $blanc;
+    width:80%;
+    z-index: 1;
+    color:$noir;
+    transition: top 0.4s ease-in;
+}
+.infoPet a{
+    color:$noir;
+    text-decoration: none;
+    font-size: 1.7rem;
+}
+
+@media screen and (min-width:768px){
+.swiper-slide:hover{
+    .infoPet{
+      top:52%;
+    }
+
+}
+}
